@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Zam=hama</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     :root {
       --card:#0f1724cc; 
@@ -26,7 +25,36 @@
       background:url("https://files.catbox.moe/klfmbw.jpg") no-repeat center center;
       background-size:cover;
       background-attachment:scroll; 
+      flex-direction:column;
+      gap:10px;
     }
+
+    .marquee-wrap {
+      width:100%;
+      max-width:480px;
+      overflow:hidden;
+      border-radius:12px;
+      background:rgba(15,23,36,0.7); 
+      height:30px;
+      line-height:30px;
+      position:relative;
+      box-shadow:0 4px 16px rgba(0,0,0,0.4);
+    }
+    .marquee-text {
+      display:inline-block;
+      white-space:nowrap;
+      color:var(--white);
+      font-weight:bold;
+      font-size:15px;
+      padding-right:100%;
+      animation:marquee 12s linear infinite;
+    }
+    @keyframes marquee {
+      0%   { transform:translateX(100%); opacity:0; }
+      5%   { opacity:1; }
+      100% { transform:translateX(-100%); opacity:1; }
+    }
+
     .wrap {width:100%;max-width:480px}
     .card {
       background:var(--card);
@@ -112,12 +140,16 @@
   </style>
 </head>
 <body>
+  <div class="marquee-wrap">
+    <div class="marquee-text">Jangan lupa pollow akun gw ye</div>
+  </div>
+
   <div class="wrap">
     <div class="card">
       <div class="welcome">Halo selamat datang di web keeta</div>
       <img src="https://files.catbox.moe/4ugef5.jpg" alt="Foto Profil Zam" class="profile-img">
 
-      <h1>Zam</h1>
+      <h1>keeta</h1>
       <p class="bio">All kontak dan sosmed keeta</p>
 
       <div class="links">
@@ -142,6 +174,7 @@
       <div class="footer">by Rullz with Zam</div>
     </div>
   </div>
+
   <div class="floating-btn" onclick="playSound()">
     <img src="https://files.catbox.moe/0w3rat.jpg" alt="Floating Button">
   </div>
